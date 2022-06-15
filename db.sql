@@ -1,0 +1,11 @@
+USE heroku_c9bb551fc1cf817;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT(11) AUTO_INCREMENT,
+    login VARCHAR(31) NOT NULL UNIQUE,
+    pass VARCHAR(255) NOT NULL,
+    fullName VARCHAR(63) NOT NULL,
+    email VARCHAR(63) NOT NULL UNIQUE,
+    ava INT(11) NOT NULL DEFAULT 1,
+    PRIMARY KEY (id)
+);

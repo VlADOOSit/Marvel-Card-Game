@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lobby.css">
+    <link rel="icon" type="image/png" href="./assets/unnamed.jpg">
+    <title>Profile</title>
+</head>
+<body>
+    
+    
+    <div id="container1" style="display:block"> 
+        <script src="/socket.io/socket.io.js"></script>
+
+        <div class="menu">
+            <img id='avatar' alt="avatar">
+            <nav>
+                <ul>
+                    <li><a href="/">Лоббi</a></li>
+                    <li><a href="/store">Картки</a></li>
+                    <li><a href="/profile">Профiль</a></li>
+                    <li><a href="/rules">Правила</a></li>
+                    <li><a id="logout">Вийти</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+
+        <p id="log"></p>
+
+       
+
+        <input type="submit" id="gradient-button" value="Пошук суперника">
+        <!--Я Б ЦЕ ВИНІС, АЛЕ ХЗ, МЕЙБІ ТАК МАЄ БУТИ
+        src="./assets/avatars/1.png"-->
+        <div id="load" style="display: none">
+            <p id="waitingText">Очікується підключення...</p>
+            <div class="container">
+                <div class="gear" id="gear1"></div>
+            </div>
+        </div>
+
+        
+       <!-- <script src="profile.js"></script>-->
+        <!--<script src="client.js"></script>-->
+        <script>
+            let request = new XMLHttpRequest();
+            
+            request.open('POST', '/', true);
+            
+            request.setRequestHeader( 'Content-Type', 'application/json');
+            request.addEventListener('load', function () {
+                let receivedUser = JSON.parse(request.response);
+                if (receivedUser.ans == "YESlogin") {
+                    window.location.href = '/login';
+                }
+                else {
+                    document.getElementById('log').innerHTML = `Привiт, <span id="user">${receivedUser.login}</span>`;
+                    console.log(receivedUser.ava);
+                    let ava = document.getElementById('avatar');
+                    if(receivedUser.ava % 5 == 1){
+                        ava.outerHTML = `<img src="./assets/avatars/1.jpg" alt="avatar" id="avatar">`;
+                    }
+                    if(receivedUser.ava % 5 == 2){
+                        ava.outerHTML = `<img src="./assets/avatars/2.jpg" alt="avatar" id="avatar">`;
+                    }
+                    if(receivedUser.ava % 5 == 3){
+                        ava.outerHTML = `<img src="./assets/avatars/3.jpeg" alt="avatar" id="avatar">`;
+                    }
+                    if(receivedUser.ava % 5 == 4){
+                        ava.outerHTML = `<img src="./assets/avatars/4.jpg" alt="avatar" id="avatar">`;
+                    }
+                    if(receivedUser.ava % 5 == 0){
+                        ava.outerHTML = `<img src="./assets/avatars/5.jpg" alt="avatar" id="avatar">`;
+                    }
+                }
+            });
+            
+            request.send();
+
+            let logoutButton = document.getElementById('logout');
+            logoutButton.addEventListener('click', function (evt) {
+        
+                evt.preventDefault();
+                
+                
+                let request = new XMLHttpRequest()
+
+                request.open('POST', '/logout', true);
+                
+                request.setRequestHeader( 'Content-Type', 'application/json');
+                
+                request.addEventListener('load', function () {
+                    let receivedUser = JSON.parse(request.response);
+                    if(receivedUser.ans = "logout") {
+                        window.location.href = '/login';
+                    }
+                });
+                    
+                request.send();
+
+            });
+        
+        </script>
+    </div>
+    
+    <div id="container2" style="display: none">
+        
+        <div class="message" style="display: none;">Максимальна кількість карт вже задіяна!!!!</div>
+        <div class="message" style="display: none;">Максимальна кiлькiсть карток на полi!!!!!!</div>
+        <div class="money-user">
+            <div id="money-user-value1">1</div>
+            <div id="money-user-text">/</div>
+            <div id="money-user-value2">1</div>
+            <img src="./assets/money.png" alt="money" id="money-user-img">    
+
+        </div>
+        <div class="money-opponent">
+            <div id="money-opponent-value">1</div>
+            <img src="./assets/money.png" alt="money" id="money-opponent-img">    
+        </div>
+        <div class="cards-opponent-clickable">
+            <div class="main-cards" id="opponent">
+                <div class="main-cards__image"></div>
+                <div id="oppName" class="main-cards__unit-name">Оппонент(Ім'я з бд)</div>
+                <div class="main-cards__unit-stats clearfix">
+                    <div class="main-stat">40</div>
+                    <div class="main-stat-value">Здоров'я</div>
+                </div>
+            </div>
+            <div class="cards-opponent-on-board"></div>
+        </div>   
+        <div class="main-cards" id="you">
+            <div class="main-cards__image"></div>
+            <div id="youName" class="main-cards__unit-name">Ви(Ім'я з бд)</div>
+            <div class="main-cards__unit-stats clearfix">
+                <div class="main-stat">40</div>
+                <div class="main-stat-value">Здоров'я</div>
+            </div>
+        </div>
+        <!--<img src="./assets/game/card1.png" alt="card1" id="card1">
+        <img src="./assets/game/card2.jpeg" alt="card2" id="card2">-->
+        <button disabled="true" id="red-button" name="Хід суперника" onclick="changeCourse()">Хід суперника</button>
+        <div class="cards_opponent"></div>
+        <div class="cards_user"></div>
+        <div class="cards-user-on-board"><!--Поки не треба але може пригодиться--></div>
+        <div class="cards-opponent"></div>
+        
+    </div>
+    <script src="client.js"></script>
+</body>
+</html>

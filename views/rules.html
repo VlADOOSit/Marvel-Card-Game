@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rules.css">
+    <link rel="icon" type="image/png" href="./assets/unnamed.jpg">
+    <title>Rules</title>
+</head>
+<body>
+    <div class="menu">
+        <img id='avatar' alt="avatar">
+        <nav>
+            <ul>
+                <li><a href="/">Лоббi</a></li>
+                <li><a href="/store">Картки</a></li>
+                <li><a href="/profile">Профiль</a></li>
+                <li><a href="/rules">Правила</a></li>
+                <li><a id="logout">Вийти</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <h1>Вітаю!</h1>
+        <p class="text">1) Оцініть свою кількість монет та можливість для купівлі тієї чи іншої картки</p>
+        <div class="rule_img">
+            <img src="./assets/coin.png" alt="coin">
+            <img src="./assets/hero.png" alt="hero">
+        </div>
+        <p class="text">2) Поставте обрану картку на поле і, якщо ви більше не маєте можливості щось робити передайте хід супернику</p>
+        <div class="rule_img">
+            <img src="./assets/card.png" alt="hero">
+            <img src="./assets/button.png" alt="coin">
+        </div>
+        <p class="text">3) Коли ваша картка має можливість наносити удар ви робите вибір між картками суперника та його головною карткою</p>
+        <div class="rule_img">
+            <img src="./assets/choose.png" alt="hero">
+        </div>
+        <p class="text">При нанесені удару по головній картці з неї знімається така кількість балів, яка дорівнює показнику атаки карти, що нападає. При нанесені удару карткам суперника, дві з них йдуть до бою, і в кожної з них, знімає таку кількість балів захисту, яка дорівнює показнику атаки опонента. Якщо захист стає 0, картка зникає</p>
+        <div class="rule_img">
+            <img src="./assets/123.png" alt="hero">
+        </div>
+        <p class="text">4) Не забувайте про спеціальні можливості карток. Гра закінчується коли в однієї з головних карток закінчуються бали</p>
+        <div class="rule_img">
+            <img src="https://i.gifer.com/origin/8a/8a0107c74c6f96dfd443bcda864d54e3.gif" alt="sss">
+        </div>
+        <h1>Бажаю успіхів</h1>
+    </div>
+    <footer>
+        <span>Developed by Vladyslav Kharkivskyi, Dmytro Arseniuk, Oleksandr Hamaiun
+            <br>Copyright &copy; 2022. All rights reserved</span>
+    </footer>
+    
+    <script>
+        let request = new XMLHttpRequest();
+        
+        request.open('POST', '/', true);
+        
+        request.setRequestHeader( 'Content-Type', 'application/json');
+        request.addEventListener('load', function () {
+            let receivedUser = JSON.parse(request.response);
+            if (receivedUser.ans == "YESlogin") {
+                window.location.href = '/login';
+            }
+            else {
+                console.log(receivedUser.ava);
+                let ava = document.getElementById('avatar');
+                if(receivedUser.ava % 5 == 1){
+                    ava.outerHTML = `<img src="./assets/avatars/1.jpg" alt="avatar" id="avatar">`;
+                }
+                if(receivedUser.ava % 5 == 2){
+                    ava.outerHTML = `<img src="./assets/avatars/2.jpg" alt="avatar" id="avatar">`;
+                }
+                if(receivedUser.ava % 5 == 3){
+                    ava.outerHTML = `<img src="./assets/avatars/3.jpeg" alt="avatar" id="avatar">`;
+                }
+                if(receivedUser.ava % 5 == 4){
+                    ava.outerHTML = `<img src="./assets/avatars/4.jpg" alt="avatar" id="avatar">`;
+                }
+                if(receivedUser.ava % 5 == 0){
+                    ava.outerHTML = `<img src="./assets/avatars/5.jpg" alt="avatar" id="avatar">`;
+                }
+            }
+        });
+        
+        request.send();
+
+        let logoutButton = document.getElementById('logout');
+        logoutButton.addEventListener('click', function (evt) {
+    
+            evt.preventDefault();
+            
+            
+            let request = new XMLHttpRequest()
+
+            request.open('POST', '/logout', true);
+            
+            request.setRequestHeader( 'Content-Type', 'application/json');
+            
+            request.addEventListener('load', function () {
+                let receivedUser = JSON.parse(request.response);
+                if(receivedUser.ans = "logout") {
+                    window.location.href = '/login';
+                }
+            });
+                
+            request.send();
+
+        });
+    
+    </script>
+</body>
+</html>

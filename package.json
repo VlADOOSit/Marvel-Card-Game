@@ -1,0 +1,27 @@
+{
+  "name": "t03_bring_them_together",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VlADOOSit"
+  },
+  "author": "VLADOOSit",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "email-validator": "^2.0.4",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "forever-monitor": "^3.0.3",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.7.5",
+    "shortid": "^2.2.16",
+    "socket.io": "^4.5.1"
+  }
+}

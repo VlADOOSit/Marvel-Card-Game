@@ -1,0 +1,667 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
+
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 15px;
+}
+  
+nav ul {
+    margin: 0;
+    display: flex;
+}
+  
+nav a {
+    min-height: 80px;
+    display: block;
+    padding: 5px 145px;
+    line-height: 80px;
+}
+
+li {
+    list-style: none;
+}
+  
+ul {
+    padding: 0;
+}
+  
+a {
+    text-decoration: none;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 45px;
+}
+
+#avatar{
+      position: relative;
+      left: 0%;
+      top: 0%;
+      border-radius:50%;
+      width: 5%;
+}
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url('assets/game/fon2.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font: 14px/20px "Lato", Arial, sans-serif;
+  color: #9E9E9E;
+
+}
+
+
+#you{
+  font-size: 60px;
+  position: absolute;
+  left: 10%;
+  top:40%;
+  color: white;
+}
+
+#opponent{
+  position: absolute;
+  left: 2%;
+  top:10%;
+  color: white;
+}
+
+h1{
+  color: white;
+  position: absolute;
+  left: 35%;
+  top: 10%;
+  font-size: 40px;
+}
+
+.cards {
+
+  background: white;
+  width: 140px;
+  display: inline-block;
+  margin: 20px 10px;
+  position: relative;
+  text-align: center;
+  box-shadow: -1px 15px 30px -12px black;
+  position: absolute;
+  top: 75.3%;
+}
+
+.cards__image {
+  position: relative;
+  height: 90px;
+  margin-bottom: 5px;
+}
+
+.cards__unit-name {
+  font-size: 16px;
+  color: black;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.cards__unit-description {
+
+  padding: 0px;
+  margin-bottom: 2px;  
+}
+
+.cards__unit-stats {
+  background: #520606;
+}
+
+.one-third {
+  border-right: 1px solid #160d02;
+  width: 33%;
+  float: left;
+  padding: 5px 5px;
+}
+
+
+.cards__unit-stats {
+  color: white;
+  font-weight: 500;
+
+}
+
+
+.stat {
+  position: relative;
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.stat-value {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.no-border {
+  border-right: none;
+}
+
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+.slick-prev {
+  left: 100px;
+  z-index: 999;
+}
+
+.slick-next {
+  right: 100px;
+  z-index: 999;
+}
+
+
+
+/*Х-ки кожного героя*/
+
+#spiderman .cards__image{
+  background: red;
+}
+#img-spiderman{
+  height: 100px;
+  position: absolute;
+  top: -5%;
+  left: 15%;    
+}
+
+#captain-America .cards__image{
+  background: rgb(7, 28, 122);
+}
+#img-captain-America{
+  height: 100px;
+  position: absolute;
+  top: -5%;
+  left: 16%;    
+}
+
+#iron-man .cards__image{
+  background: rgb(128, 9, 9);
+}
+#img-iron-man{
+  height: 95px;
+  position: absolute;
+  top: -5%;
+  left: 16%;    
+}
+
+#black-widow .cards__image{
+  background: rgb(46, 16, 16);
+}
+#img-black-widow{
+  height: 100px;
+  position: absolute;
+  top: -10%;
+  left: 16%;    
+}
+
+#tor .cards__image{
+  background: rgb(129, 126, 119);
+}
+#img-tor{
+  height: 100px;
+  position: absolute;
+  top: -5%;
+  left: 16%;    
+}
+
+#hulk .cards__image{
+  background: rgb(17, 114, 17);
+}
+#img-hulk{
+  height: 100px;
+  position: absolute;
+  top: -5%;
+  left: 16%;    
+}
+
+#deadpool .cards__image{
+  background: rgb(88, 15, 15);
+}
+#img-deadpool{
+  height: 100px;
+  position: absolute;
+  top: -5%;
+  left: 16%;    
+}
+
+#black-pantera .cards__image{
+  background: rgb(67, 17, 114);
+}
+#img-black-pantera{
+  height: 100px;
+  position: absolute;
+  top: -5%;
+  left: 16%;    
+}
+
+#doctor-strength .cards__image{
+  background: rgb(15, 38, 88);
+}
+#img-doctor-strength{
+  height: 100px;
+  position: absolute;
+  top: -5%;
+  left: 16%;    
+}
+
+#thanos .cards__image{
+  background: rgb(255, 208, 0);
+}
+#img-thanos{
+  height: 100px;
+  position: absolute;
+  top: -5%;
+  left: 16%;    
+}
+
+
+#eye .cards__image{
+  background: rgb(41, 151, 31);
+}
+#img-eye{
+  height: 105px;
+  position: absolute;
+  top: -10%;
+  left: 16%;    
+}
+
+
+#nick-fiuri .cards__image{
+  background: rgb(187, 42, 216);
+}
+#img-nick-fiuri{
+  height: 110px;
+  position: absolute;
+  top: -10%;
+  left: 16%;    
+}
+
+#antman .cards__image{
+  background: rgb(216, 97, 42);
+}
+#img-antman{
+  height: 110px;
+  position: absolute;
+  top: -10%;
+  left: 16%;    
+}
+
+#groot .cards__image{
+  background: rgb(150, 102, 0);
+}
+#img-groot{
+  height: 110px;
+  position: absolute;
+  top: -10%;
+  left: 16%;    
+}
+
+#gamora .cards__image{
+  background: rgb(32, 190, 0);
+}
+#img-gamora{
+  height: 105px;
+  position: absolute;
+  top: -10%;
+  left: 16%;    
+}
+
+#star-knight .cards__image{
+  background: rgb(255, 174, 0);
+}
+#img-star-knight{
+  height: 110px;
+  position: absolute;
+  top: -10%;
+  left: 16%;    
+}
+
+#rocket .cards__image{
+  background: rgb(0, 190, 133);
+}
+#img-rocket{
+  height: 95px;
+  position: absolute;
+  top: 0%;
+  left: 23%;    
+}
+
+#drucks .cards__image{
+  background: rgb(80, 55, 0);
+}
+#img-drucks{
+  border-radius: 0px;
+  height: 105px;
+  position: absolute;
+  top: -10%;
+  left: 16%;    
+}
+
+#winter-soldier .cards__image{
+  background: rgb(202, 191, 167);
+}
+#img-winter-soldier{
+  height: 105px;
+  position: absolute;
+  top: -10%;
+  left: 24%;    
+}
+
+#falcon .cards__image{
+  background: rgb(209, 49, 28);
+}
+#img-falcon{
+  height: 105px;
+  position: absolute;
+  top: -10%;
+  left: 16%;    
+}
+
+#roady .cards__image{
+  background: rgb(209, 49, 28);
+}
+#img-roady{
+  height: 105px;
+  position: absolute;
+  top: -10%;
+  left: 20%;    
+}
+
+#logout {
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-cards {
+  /*border-radius: 40px;*/
+  border-top-left-radius: 4vh;
+  border-top-right-radius: 4vh;
+  background: white;
+  width: 27vh;
+  display: inline-block;
+  margin: 2vh 0.2vh;
+  position: relative;
+  text-align: center;
+  box-shadow: -1px 15px 30px -12px black;
+}
+
+.main-cards__image {
+  border-top-left-radius: 4vh;
+  border-top-right-radius: 4vh;
+  position: relative;
+  height: 21vh;
+  margin-bottom: 3.5vh;
+}
+
+
+#opponent .main-cards__unit-name{
+  font-size: 4vh;
+  font-weight: 600;
+  margin-bottom: 5vh;
+  color: rgb(255, 0, 0);
+  cursor: default;
+}
+
+#you .main-cards__unit-name{
+  font-size: 4vh;
+  font-weight: 600;
+  margin-bottom: 5vh;
+  color: rgb(0, 0, 0);
+  cursor: default;
+
+}
+
+#opponent .main-cards__unit-stats {
+  background: #aa0000;
+  /*border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;*/
+  color: white;
+  font-weight: 700;
+
+}
+
+#you .main-cards__unit-stats {
+  background: #060886;
+  /*border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;*/
+  color: white;
+  font-weight: 700;
+
+}
+
+.main-stat {
+  padding-top: 1vh;
+  position: relative;
+  font-size: 2.4vh;
+
+  margin-bottom: 1vh;
+}
+
+.main-stat-value {
+
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.2vh;
+}
+
+.no-border {
+  border-right: none;
+}
+
+#opponent .main-cards__image{
+    background-image: url('assets/avatars/1.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#opponent{
+  left: 2%;
+  top: 0%;
+}
+
+#you{
+  left: 2%;
+  top: 55%;
+}
+
+#you .main-cards__image{
+  background-image: url('assets/avatars/2.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#card1{
+  border-radius: 0px;
+  height: 30vh;
+  width: 20vh;
+  position: relative;
+  left: 85%;
+  top: 67%;
+  cursor: pointer;
+}
+#card2{
+  border-radius: 0px;
+  height: 30vh;
+  width: 20vh;
+  position: relative;
+  left: 74.5%;
+  top: 2%;
+  cursor: pointer;
+}
+
+
+
+#red-button {
+  /*Разом з картами:
+  left: 60%;
+  top: 20%;*/
+  left: 82%;
+  top: 42%;
+
+  position: relative;
+  margin: 0px;
+  display: inline-block;
+  width: 35vh;
+  height: 15vh;
+  line-height: 3em;
+  vertical-align: middle;
+  text-align: center;
+  text-shadow: 0 -1px 1px #777;
+  font-size: 4.2vh;
+  color: #fff;
+  outline: none;
+  border: 2px solid #9c0101;
+  border-radius: 6vh;
+  box-shadow: 0 0 0 6vh rgba(0,0,0,0) inset, .1em .1em .2em #800;
+  background: linear-gradient(#FB9575, #F45A38 48%, #EA1502 52%, #F02F17);
+}
+#red-button:active {
+  box-shadow: 0 0 0 6vh rgba(0,0,0,.05) inset;
+}
+
+.cards-opponent-on-board .cards {
+  border-radius: 40px;
+  top: 20%;
+}
+.cards-opponent-on-board .cards__image {
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+.cards-opponent-on-board .cards__unit-stats {
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+#card-user-on-board1, #card-user-on-board2, #card-user-on-board3, #card-user-on-board4, #card-user-on-board5, #card-user-on-board6, #card-user-on-board7, #card-user-on-board8{
+  border-radius: 40px;
+}
+
+#card-user-on-board1 .cards__image, #card-user-on-board2 .cards__image, #card-user-on-board3 .cards__image, #card-user-on-board4 .cards__image, #card-user-on-board5 .cards__image, #card-user-on-board6 .cards__image, #card-user-on-board7 .cards__image, #card-user-on-board8 .cards__image {
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+#card-user-on-board1 .cards__unit-stats, #card-user-on-board2 .cards__unit-stats,#card-user-on-board3 .cards__unit-stats,#card-user-on-board4 .cards__unit-stats,#card-user-on-board5 .cards__unit-stats,#card-user-on-board6 .cards__unit-stats,#card-user-on-board7 .cards__unit-stats,#card-user-on-board8 .cards__unit-stats{
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.cards_opponent{
+  left:20%;
+}
+
+.cards_opponent img{
+    border-radius: 0px;
+    height: auto;
+    width: 140px;
+    top: -10%;      
+}
+
+#cardOpponent1 img, #cardOpponent2 img, #cardOpponent3 img, #cardOpponent4 img, #cardOpponent5 img, #cardOpponent6 img, #cardOpponent7 img, #cardOpponent8 img{
+  position: absolute;
+}
+
+
+
+#money-user-img{
+  position: absolute;
+  left: 87%;
+  top: 80%;
+  height: 15vh;
+}
+#money-user-value1{
+  position: absolute;
+  left: 88.1%;
+  top: 75%;
+  font-size: 4vh;
+  color: rgb(4, 0, 255);
+}
+#money-user-text{
+  position: absolute;
+  left: 90.6%;
+  top: 75%;
+  font-size: 4vh;
+  color: rgb(4, 0, 255);
+}
+
+#money-user-value2{
+  position: absolute;
+  left: 92.6%;
+  top: 75%;
+  font-size: 4vh;
+  color: rgb(4, 0, 255);
+}
+
+#money-opponent-value{
+  position: absolute;
+  left: 90.4%;
+  top: 5%;
+  font-size: 4vh;
+  color: rgb(255, 0, 0);
+}
+
+
+#money-opponent-img{
+  position: absolute;
+  left: 87%;
+  top: 10%;
+  height: 15vh;
+}
+
+
+@keyframes show {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

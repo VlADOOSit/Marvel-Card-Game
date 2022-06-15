@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>MarvelGame</title>
+        <meta name="description" content="lobbyGame" charset="utf-8">
+        <link rel="stylesheet" href="cards.css">
+        <link rel="icon" type="image/png" href="./assets/unnamed.jpg">
+    </head>
+    <body>
+        <div class="menu">
+            <img id='avatar' alt="avatar">
+            <nav>
+                <ul>
+                    <li><a href="/">Лоббi</a></li>
+                    <li><a href="/store">Картки</a></li>
+                    <li><a href="/profile">Профiль</a></li>
+                    <li><a href="/rules">Правила</a></li>
+                    <li><a id="logout">Вийти</a></li>
+                </ul>
+            </nav>
+        </div>
+        <h1 style="font-size: 3vw; text-align: center;">Список доступних вам карток:</h1>
+        <div class="slide-container">
+          <div class="cards" id="spiderman">
+            <div class="cards__image">
+              <img src="assets/heroes/1.png" alt="spiderman" id="img-spiderman">
+            </div>
+            <div class="cards__unit-name">Людина-павук</div>
+            <div class="cards__unit-description" style="padding-top: 40px;">Вам додається 2 картки.</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">5</div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">4</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">5</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="captain-America">
+            <div class="cards__image">
+              <img src="assets/heroes/2.png" alt="captainAmerica" id="img-captain-America">
+            </div>
+            <div class="cards__unit-name">Капітан Америка</div>
+            <div class="cards__unit-description">+1 до захисту карток співкомандників</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">4</div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">4</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">5</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="iron-man">
+            <div class="cards__image">
+              <img src="assets/heroes/3.png" alt="Iron-man" id="img-iron-man">
+            </div>
+            <div class="cards__unit-name">Залізна людина</div>
+            <div class="cards__unit-description">-1 до атаки карток опонентів</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">2</div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">7</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">4</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="black-widow">
+            <div class="cards__image">
+              <img src="assets/heroes/4.png" alt="black-widow" id="img-black-widow">
+            </div>
+            <div class="cards__unit-name">Чорна вдова</div>
+            <div class="cards__unit-description">+1 до атаки карток співкомандників</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">2</div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">1</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">1</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="tor">
+            <div class="cards__image">
+              <img src="assets/heroes/5.png" alt="tor" id="img-tor">
+            </div>
+            <div class="cards__unit-name">Тор</div>
+            <div class="cards__unit-description"style="padding-top: 40px;" >+3 монети на цьому ході</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">4</div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">4</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">5</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="hulk">
+            <div class="cards__image">
+              <img src="assets/heroes/6.png" alt="hulk" id="img-hulk">
+            </div>
+            <div class="cards__unit-name">Халк</div>
+            <div class="cards__unit-description">Не має спеціальних навичок.</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">7</div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">6</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">5</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="deadpool">
+            <div class="cards__image">
+              <img src="assets/heroes/7.png" alt="deadpool" id="img-deadpool">
+            </div>
+            <div class="cards__unit-name">Дедпул</div>
+            <div class="cards__unit-description">+3 до здоров'я вашого героя.</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">4</div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">2</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">3</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="black-pantera">
+            <div class="cards__image">
+              <img src="assets/heroes/8.png" alt="black-pantera" id="img-black-pantera">
+            </div>
+            <div class="cards__unit-name">Чорна пантера</div>
+            <div class="cards__unit-description">-3 до здоров'я героя опонента.</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">4</div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">3</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">4</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="doctor-strength">
+            <div class="cards__image">
+              <img src="assets/heroes/9.png" alt="doctor-strength" id="img-doctor-strength">
+            </div>
+            <div class="cards__unit-name">Доктор Стрендж</div>
+            <div class="cards__unit-description">Може атакувати на першому ході.</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">5</div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">2</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">5</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="thanos">
+            <div class="cards__image">
+              <img src="assets/heroes/10.png" alt="Thanos" id="img-thanos">
+            </div>
+            <div class="cards__unit-name">Танос</div>
+            <div class="cards__unit-description">Ставиться одразу 2 даних картки.</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">6</div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">6</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">8</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="eye">
+            <div class="cards__image">
+              <img src="assets/heroes/11.png" alt="Eye" id="img-eye">
+            </div>
+            <div class="cards__unit-name">Соколине око</div>
+            <div class="cards__unit-description">+2 до захисту карток співкомандників.</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">2<sup></sup></div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">1</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">3</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="nick-fiuri">
+            <div class="cards__image">
+              <img src="assets/heroes/12.png" alt="Nick Fiuri" id="img-nick-fiuri">
+            </div>
+            <div class="cards__unit-name">Нік Фьюрі</div>
+            <div class="cards__unit-description">+2 до атаки карток співкомандників</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">2<sup></sup></div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">2</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">3</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="antman">
+            <div class="cards__image">
+              <img src="assets/heroes/13.png" alt="Antman" id="img-antman">
+            </div>
+            <div class="cards__unit-name">Людина-мураха</div>
+            <div class="cards__unit-description">При появі знищує всі картки опонента.</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">2<sup></sup></div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">1</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">5</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="groot">
+            <div class="cards__image">
+              <img src="assets/heroes/14.png" alt="Groot" id="img-groot">
+            </div>
+            <div class="cards__unit-name">Грут</div>
+            <div class="cards__unit-description">При появі знищує всі картки на столі.</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">1<sup></sup></div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">1</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">4</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="gamora">
+            <div class="cards__image">
+              <img src="assets/heroes/15.png" alt="Gamora" id="img-gamora">
+            </div>
+            <div class="cards__unit-name">Гамора</div>
+            <div class="cards__unit-description">-2 до ціни ваших витягнутих карток.</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">2<sup></sup></div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">3</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">3</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>  
+          <div class="cards" id="star-knight">
+            <div class="cards__image">
+              <img src="assets/heroes/16.png" alt="Star-knight" id="img-star-knight">
+            </div>
+            <div class="cards__unit-name">Зоряний лорд</div>
+            <div class="cards__unit-description">Розблоковує хід усім вашим карткам.</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">2<sup></sup></div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">1</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">3</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="rocket">
+            <div class="cards__image">
+              <img src="assets/heroes/17.png" alt="Rocket" id="img-rocket">
+            </div>
+            <div class="cards__unit-name">Ракета</div>
+            <div class="cards__unit-description">Захист всіх карток ворога стає 2..</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">1<sup></sup></div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">2</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">3</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="drucks">
+            <div class="cards__image">
+              <img src="assets/heroes/18.png" alt="Drucks" id="img-drucks">
+            </div>
+            <div class="cards__unit-name">Дракс руйнівник</div>
+            <div class="cards__unit-description">Атака всіх карток ворога стає 2.</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">1</div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">3</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">2</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="winter-soldier">
+            <div class="cards__image">
+              <img src="assets/heroes/19.png" alt="Winter-soldier" id="img-winter-soldier">
+            </div>
+            <div class="cards__unit-name">Зимовий солдат</div>
+            <div class="cards__unit-description">Атака всіх ваших карток стає 3.</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">1</div>
+                <div src="./assets/avatars/1.jpg"class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">2</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">2</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="falcon">
+            <div class="cards__image">
+              <img src="assets/heroes/20.png" alt="Falcon" id="img-falcon">
+            </div>
+            <div class="cards__unit-name">Сокіл</div>
+            <div class="cards__unit-description">Захист всіх ваших карток стає 3</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">3</div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">2</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">3</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" id="roady">
+            <div class="cards__image">
+              <img src="assets/heroes/21.png" alt="Roady" id="img-roady">
+            </div>
+            <div class="cards__unit-name">Роуді</div>
+            <div class="cards__unit-description">-2 до атаки карток опонентів.</div>
+            <div class="cards__unit-stats clearfix">
+              <div class="one-third">
+                <div class="stat">3</div>
+                <div class="stat-value">Атака</div>
+              </div>
+              <div class="one-third">
+                <div class="stat">3</div>
+                <div class="stat-value">Захист</div>
+              </div>
+              <div class="one-third no-border">
+                <div class="stat">4</div>
+                <div class="stat-value">Ціна</div>
+              </div>
+            </div>
+          </div>
+      </div> 
+        <script>
+          let request = new XMLHttpRequest()
+            
+            request.open('POST', '/', true);
+            
+            request.setRequestHeader( 'Content-Type', 'application/json');
+            
+            request.addEventListener('load', function () {
+                let receivedUser = JSON.parse(request.response);
+
+                if (receivedUser.ans == "YESlogin") {
+                    window.location.href = '/login';
+                }
+                else {
+                  //document.getElementById('avatar').setAttribute('src', `./assets/avatars/${receivedUser.ava}.png`);
+                  let ava = document.getElementById('avatar');
+                  if(receivedUser.ava % 5 == 1){
+                        ava.outerHTML = `<img src="./assets/avatars/1.jpg" alt="avatar" id="avatar">`;
+                    }
+                    if(receivedUser.ava % 5 == 2){
+                        ava.outerHTML = `<img src="./assets/avatars/2.jpg" alt="avatar" id="avatar">`;
+                    }
+                    if(receivedUser.ava % 5 == 3){
+                        ava.outerHTML = `<img src="./assets/avatars/3.jpeg" alt="avatar" id="avatar">`;
+                    }
+                    if(receivedUser.ava % 5 == 4){
+                        ava.outerHTML = `<img src="./assets/avatars/4.jpg" alt="avatar" id="avatar">`;
+                    }
+                    if(receivedUser.ava % 5 == 0){
+                        ava.outerHTML = `<img src="./assets/avatars/5.jpg" alt="avatar" id="avatar">`;
+                    }
+                }
+            });
+            
+            request.send();
+          let logoutButton = document.getElementById('logout');
+          logoutButton.addEventListener('click', function (evt) {
+      
+              evt.preventDefault();
+              
+
+              let request = new XMLHttpRequest()
+
+              request.open('POST', '/logout', true);
+              
+              request.setRequestHeader( 'Content-Type', 'application/json');
+              
+              request.addEventListener('load', function () {
+                  let receivedUser = JSON.parse(request.response);
+                  
+                  if(receivedUser.ans = "logout") {
+                      window.location.href = '/login';
+                  }
+              });
+                  
+              request.send();
+
+          });
+      </script>
+    </body>
+</html>

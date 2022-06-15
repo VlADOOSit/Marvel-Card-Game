@@ -1,0 +1,379 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
+
+
+.menu {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 15px;
+}
+nav {
+  width: 100%;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  display: flex;
+}
+
+ul li {
+  list-style-type: none;
+  flex-basis: auto;
+  flex-grow: 1;
+  background: #000;
+  text-align: center;
+}
+
+ul li a {
+  text-decoration: none;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 2.5vw;
+    display: block;
+    line-height: 80px;
+}
+
+#avatar{
+  left: 0%;
+  top: 0%;
+  border-radius:50%;
+  width: 5%;
+}
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font: 14px/20px "Lato", Arial, sans-serif;
+  color: #9E9E9E;
+  margin-top: 30px;
+  background: linear-gradient(90deg, blue,pink);
+  margin: 0;
+}
+h1{
+  color: white;
+  margin-bottom: 0;
+}
+
+.slide-container {
+  text-align: left;
+  padding-top: 130px;
+
+}
+
+.cards {
+  background: white;
+  width: 220px;
+  display: inline-block;
+  margin: 5px 10px;
+  position: relative;
+  text-align: center;
+  box-shadow: -1px 15px 30px -12px black;
+
+}
+
+.cards__image {
+  position: relative;
+  height: 150px;
+  margin-bottom: 35px;
+}
+
+.cards__unit-name {
+  font-size: 22px;
+  color: black;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.cards__unit-description {
+  padding: 20px;
+  margin-bottom: 10px;  
+}
+
+#spiderman.cards__unit-description {
+  padding: 25px;
+}
+
+.cards__unit-stats {
+  background: #520606;
+}
+
+.one-third {
+  border-right: 1px solid #160d02;
+  width: 33%;
+  float: left;
+  padding: 10px 15px;
+}
+
+
+.cards__unit-stats {
+  color: white;
+  font-weight: 700;
+}
+
+sup {
+  position: absolute;
+  bottom: 4px; 
+  font-size: 45%;
+  margin-left: 2px;
+}
+
+.stat {
+  position: relative;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.no-border {
+  border-right: none;
+}
+
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+.slick-prev {
+  left: 100px;
+  z-index: 999;
+}
+
+.slick-next {
+  right: 100px;
+  z-index: 999;
+}
+/*Х-ки кожного героя*/
+
+#spiderman .cards__image{
+  background: red;
+}
+#img-spiderman{
+  height: 180px;
+  position: absolute;
+  top: -5%;
+  left: 10%;    
+}
+
+#captain-America .cards__image{
+  background: rgb(7, 28, 122);
+}
+#img-captain-America{
+  height: 190px;
+  position: absolute;
+  top: -5%;
+  left: 15%;    
+}
+
+#iron-man .cards__image{
+  background: rgb(128, 9, 9);
+}
+#img-iron-man{
+  height: 180px;
+  position: absolute;
+  top: -5%;
+  left: 18%;    
+}
+
+#black-widow .cards__image{
+  background: rgb(46, 16, 16);
+}
+#img-black-widow{
+  height: 200px;
+  position: absolute;
+  top: -10%;
+  left: 18%;    
+}
+
+#tor .cards__image{
+  background: rgb(129, 126, 119);
+}
+#img-tor{
+  height: 200px;
+  position: absolute;
+  top: -5%;
+  left: 25%;    
+}
+
+#hulk .cards__image{
+  background: rgb(17, 114, 17);
+}
+#img-hulk{
+  height: 190px;
+  position: absolute;
+  top: -5%;
+  left: 19%;    
+}
+
+#deadpool .cards__image{
+  background: rgb(88, 15, 15);
+}
+#img-deadpool{
+  height: 190px;
+  position: absolute;
+  top: -5%;
+  left: 19%;    
+}
+
+#black-pantera .cards__image{
+  background: rgb(67, 17, 114);
+}
+#img-black-pantera{
+  height: 200px;
+  position: absolute;
+  top: -5%;
+  left: 19%;    
+}
+
+#doctor-strength .cards__image{
+  background: rgb(15, 38, 88);
+}
+#img-doctor-strength{
+  height: 200px;
+  position: absolute;
+  top: -5%;
+  left: 23%;    
+}
+
+#thanos .cards__image{
+  background: rgb(255, 208, 0);
+}
+#img-thanos{
+  height: 200px;
+  position: absolute;
+  top: -5%;
+  left: 20%;    
+}
+
+
+#eye .cards__image{
+  background: rgb(41, 151, 31);
+}
+#img-eye{
+  height: 200px;
+  position: absolute;
+  top: -10%;
+  left: 20%;    
+}
+
+
+#nick-fiuri .cards__image{
+  background: rgb(187, 42, 216);
+}
+#img-nick-fiuri{
+  height: 200px;
+  position: absolute;
+  top: -10%;
+  left: 20%;    
+}
+
+#antman .cards__image{
+  background: rgb(216, 97, 42);
+}
+#img-antman{
+  height: 200px;
+  position: absolute;
+  top: -10%;
+  left: 20%;    
+}
+
+#groot .cards__image{
+  background: rgb(150, 102, 0);
+}
+#img-groot{
+  height: 200px;
+  position: absolute;
+  top: -10%;
+  left: 20%;    
+}
+
+#gamora .cards__image{
+  background: rgb(32, 190, 0);
+}
+#img-gamora{
+  height: 200px;
+  position: absolute;
+  top: -10%;
+  left: 20%;    
+}
+
+#star-knight .cards__image{
+  background: rgb(255, 174, 0);
+}
+#img-star-knight{
+  height: 200px;
+  position: absolute;
+  top: -10%;
+  left: 20%;    
+}
+
+#rocket .cards__image{
+  background: rgb(0, 190, 133);
+}
+#img-rocket{
+  height: 180px;
+  position: absolute;
+  top: 0%;
+  left: 29%;    
+}
+
+#drucks .cards__image{
+  background: rgb(80, 55, 0);
+}
+#img-drucks{
+  height: 200px;
+  position: absolute;
+  top: -10%;
+  left: 20%;    
+}
+
+#winter-soldier .cards__image{
+  background: rgb(202, 191, 167);
+}
+#img-winter-soldier{
+  height: 200px;
+  position: absolute;
+  top: -10%;
+  left: 30%;    
+}
+
+#falcon .cards__image{
+  background: rgb(209, 49, 28);
+}
+#img-falcon{
+  height: 200px;
+  position: absolute;
+  top: -10%;
+  left: 15%;    
+}
+
+#roady .cards__image{
+  background: rgb(209, 49, 28);
+}
+#img-roady{
+  height: 200px;
+  position: absolute;
+  top: -10%;
+  left: 20%;    
+}
+
+#logout {
+  cursor: pointer;
+}

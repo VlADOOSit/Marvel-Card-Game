@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./assets/unnamed.jpg">
+</head>
+<body>
+    <div class="bord" style="display: block;">
+        <h1>Registration</h1>
+
+        <form name="regForm">
+            <input class="inpt" required type="text" name="login" placeholder="Login" size="25"><br>
+            <input class="inpt" required type="password" name="pass" placeholder="Password" size="25"><br>
+            <input class="inpt" required type="password" name="confPass" placeholder="Confirm password" size="25"><br>
+            <input class="inpt" required type="text" name="fullName" placeholder="Full Name" size="25"><br>
+            <input class="inpt" required type="email" name="email" placeholder="E-mail" size="25"><br>
+            <input id="regButton" type="submit" value="REGISTER">
+            <a id="log" href="/login">Login</a>
+            <p style="color: red;" id="error"></p>
+        </form>
+    </div>
+    <div id="go" style="display: none;"> 
+            <a id="log" href="/login">Login</a>
+            <p>User saved</p>
+    </div>
+
+    <script>
+        let subButton = document.getElementById('regButton');
+
+        subButton.addEventListener('click', function (evt) {
+    
+            evt.preventDefault();
+            
+            let regForm = document.forms['regForm'];
+
+            let login = regForm.elements['login'].value;
+            let pass = regForm.elements['pass'].value;
+            let fullName = regForm.elements['fullName'].value;
+            let email = regForm.elements['email'].value;
+
+            let check = regForm.elements['confPass'].value;
+
+            if(pass != check) {
+                document.getElementById('error').innerText = 'Confirm password error!';
+                regForm.elements['pass'].value = '';
+                regForm.elements['confPass'].value = '';
+            }
+
+            if (pass === check) {
+
+                let user = JSON.stringify({
+                    login: login,
+                    pass: pass,
+                    fullName: fullName,
+                    email: email,
+
+                });
+            
+                let request = new XMLHttpRequest()
+            
+                request.open('POST', '/reg', true);
+            
+                request.setRequestHeader( 'Content-Type', 'application/json');
+            
+                request.addEventListener('load', function () {
+                    let receivedUser = JSON.parse(request.response);
+                    console.log(receivedUser.ans);
+
+                    if (receivedUser.ans == 'OK') {
+                        document.getElementsByClassName('bord')[0].setAttribute('style', 'display: none');
+                        document.getElementById('go').setAttribute('style', 'display: block');
+                        //location.href='/profile';
+                    }
+                    else {
+                        document.getElementById('error').innerText = receivedUser.ans;
+                    }
+
+                });
+                
+                request.send(user);
+            }
+        
+        });
+    </script>
+</body>
+</html>

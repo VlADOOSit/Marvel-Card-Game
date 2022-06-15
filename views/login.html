@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./assets/unnamed.jpg">
+</head>
+<body>
+    <div class="bord" style="display: block;">
+        <h1>Sign in</h1>
+
+        <form name="regForm">
+            <input class="inpt" required type="text" name="login" placeholder="Login" size="25"><br>
+            <input class="inpt" required type="password" name="pass" placeholder="Password" size="25"><br>
+            <input id="regButton" type="submit" value="LOGIN">
+            <a id="log" href="/reg">Register</a><br>
+            <a href="/password">Remind password</a>
+            <p style="color: red;" id="error"></p>
+        </form>
+    </div>
+
+    <script>
+        let subButton = document.getElementById('regButton');
+        //window.location.href = '/login';
+
+        let request = new XMLHttpRequest()
+        
+        request.open('POST', '/check', true);
+        
+        request.setRequestHeader( 'Content-Type', 'application/json');
+        
+        request.addEventListener('load', function () {
+            let receivedUser = JSON.parse(request.response);
+            if (receivedUser.ans == "NOlogin") {
+                window.location.href = '/';
+            }
+        });
+
+        request.send();
+
+
+        subButton.addEventListener('click', function (evt) {
+    
+            evt.preventDefault();
+            
+            let regForm = document.forms['regForm'];
+
+            let login = regForm.elements['login'].value;
+            let pass = regForm.elements['pass'].value;
+            let user = JSON.stringify({
+                login: login,
+                pass: pass,
+            });
+        
+            let request = new XMLHttpRequest()
+        
+            request.open('POST', '/login', true);
+            
+            request.setRequestHeader( 'Content-Type', 'application/json');
+            
+            request.addEventListener('load', function () {
+                let receivedUser = JSON.parse(request.response);
+                
+                if(receivedUser.ans == 'OK') {
+                    console.log(receivedUser.ans); 
+                    window.location.href = '/';
+                }
+                else {
+                    document.getElementById('error').innerText = receivedUser.ans;
+                }
+
+            });
+                
+            request.send(user);
+        
+        });
+    </script>
+</body>
+</html>
