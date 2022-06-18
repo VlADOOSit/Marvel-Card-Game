@@ -26,12 +26,11 @@ class UserReg extends Model {
 
         mysql.query(sql, user, function (err, rows) {
             if (err) {
-                let str = err.message.split(' ')[err.message.split(' ').length - 1];
-                if (str == "'users.email'") {
-                    response.json({ans: 'User with this email is already registered'});
-                }
-                if (str == "'users.login'") {
+                if (err.message.includes("'login'")) {
                     response.json({ans: 'User with this login is already registered'});
+                }
+                if (err.message.includes("'email'")) {
+                    response.json({ans: 'User with this email is already registered'});
                 }
                 return;
             }
