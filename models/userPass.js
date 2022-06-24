@@ -42,13 +42,13 @@ class UserPass extends Model {
                 const transporter = nodemailer.createTransport({
                     service: 'gmail',
                     auth: {
-                        user: 'vlad.kharkovskiy22@gmail.com',
-                        pass: 'wsxqazwsxqaz',
+                        user: 'your email',
+                        pass: 'your pass',
                     }
                 })
             
                 transporter.sendMail({
-                    from: 'vlad.kharkovskiy22@gmail.com',
+                    from: 'your email',
                     to: user.email,
                     subject: 'password',
                     html: `
