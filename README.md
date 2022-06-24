@@ -2,7 +2,7 @@
 
 Card game with using Node.js(Express, Socket.io)
 
-If you want clone this repository and run app. You must change file models/UserPass.js. Change fields "your email" and "your pass". Input your email and password for this. For running:
+If you want clone this repository and run app. You must change file models/userPass.js. Change fields "your email" and "your pass". Input your email and password for this. For running:
 
 
 ```
