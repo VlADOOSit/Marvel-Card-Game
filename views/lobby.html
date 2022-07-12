@@ -46,62 +46,64 @@
        <!-- <script src="profile.js"></script>-->
         <!--<script src="client.js"></script>-->
         <script>
-            let request = new XMLHttpRequest();
-            
-            request.open('POST', '/', true);
-            
-            request.setRequestHeader( 'Content-Type', 'application/json');
-            request.addEventListener('load', function () {
-                let receivedUser = JSON.parse(request.response);
-                if (receivedUser.ans == "YESlogin") {
+            async function send() {
+                let response = await fetch('/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json;charset=utf-8'
+                    },
+                });
+
+                let result = await response.json();
+
+
+                if (result.ans == "YESlogin") {
                     window.location.href = '/login';
                 }
                 else {
-                    document.getElementById('log').innerHTML = `Привiт, <span id="user">${receivedUser.login}</span>`;
-                    console.log(receivedUser.ava);
+                    document.getElementById('log').innerHTML = `Привiт, <span id="user">${result.login}</span>`;
+                    console.log(result.ava);
                     let ava = document.getElementById('avatar');
-                    if(receivedUser.ava % 5 == 1){
+                    if(result.ava % 5 == 1){
                         ava.outerHTML = `<img src="./assets/avatars/1.jpg" alt="avatar" id="avatar">`;
                     }
-                    if(receivedUser.ava % 5 == 2){
+                    if(result.ava % 5 == 2){
                         ava.outerHTML = `<img src="./assets/avatars/2.jpg" alt="avatar" id="avatar">`;
                     }
-                    if(receivedUser.ava % 5 == 3){
-                        ava.outerHTML = `<img src="./assets/avatars/3.jpeg" alt="avatar" id="avatar">`;
+                    if(result.ava % 5 == 3){
+                       ava.outerHTML = `<img src="./assets/avatars/3.jpeg" alt="avatar" id="avatar">`;
                     }
-                    if(receivedUser.ava % 5 == 4){
+                    if(result.ava % 5 == 4){
                         ava.outerHTML = `<img src="./assets/avatars/4.jpg" alt="avatar" id="avatar">`;
                     }
-                    if(receivedUser.ava % 5 == 0){
+                    if(result.ava % 5 == 0){
                         ava.outerHTML = `<img src="./assets/avatars/5.jpg" alt="avatar" id="avatar">`;
                     }
                 }
-            });
+            }
             
-            request.send();
+            send();
 
             let logoutButton = document.getElementById('logout');
-            logoutButton.addEventListener('click', function (evt) {
+            logoutButton.addEventListener('click', async function (evt) {
         
                 evt.preventDefault();
-                
-                
-                let request = new XMLHttpRequest()
 
-                request.open('POST', '/logout', true);
-                
-                request.setRequestHeader( 'Content-Type', 'application/json');
-                
-                request.addEventListener('load', function () {
-                    let receivedUser = JSON.parse(request.response);
-                    if(receivedUser.ans = "logout") {
-                        window.location.href = '/login';
-                    }
+                let response = await fetch('/logout', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json;charset=utf-8'
+                    },
                 });
-                    
-                request.send();
 
+                let result = await response.json();
+
+                if(result.ans = "logout") {
+                    window.location.href = '/login';
+                }
             });
+        
+        </script>
         
         </script>
     </div>
